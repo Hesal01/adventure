@@ -1,1 +1,1 @@
-migrate: java -cp target/classes:target/dependency/* Migrations
+migrate: java -cp target/adventure-0.0.1-SNAPSHOT.jar:target/dependency/* com.pulsars.adventure.migration.Migrations
