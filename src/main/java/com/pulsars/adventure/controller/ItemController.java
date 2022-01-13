@@ -1,5 +1,8 @@
 package com.pulsars.adventure.controller;
 
+import com.pulsars.adventure.model.Item;
+import com.pulsars.adventure.service.ItemService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,13 +12,11 @@ import java.util.List;
 @RestController
 public class ItemController {
 
+    @Autowired
+    private ItemService itemService;
+
     @GetMapping("/items")
-    public List<String> getItems(){
-        return Arrays.asList(
-                "Pioche",
-                "Pot de miel",
-                "Panier en osier",
-                "Truc suspect"
-        );
+    public Iterable<Item> getItems(){
+        return itemService.getItems();
     }
 }

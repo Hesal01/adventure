@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS films;
+DROP TABLE IF EXISTS items;
 
-CREATE TABLE films (
+CREATE TABLE items (
                        id bigint PRIMARY KEY not null,
                        title       varchar NOT NULL
 );
 
-INSERT INTO films (id, title) values (1, 'film 1');
+INSERT INTO items (id, title) values (1, 'Panier en osier');
