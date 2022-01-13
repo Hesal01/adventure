@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS films;
+
 CREATE TABLE films (
                        id bigint PRIMARY KEY not null,
                        title       varchar NOT NULL
