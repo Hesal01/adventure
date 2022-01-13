@@ -14,7 +14,8 @@ public class ItemController {
         return Arrays.asList(
                 "Pioche",
                 "Pot de miel",
-                "Panier en osier"
+                "Panier en osier",
+                "Truc suspect"
         );
     }
 }
