@@ -74,7 +74,7 @@
 					<driver>org.postgresql.Driver</driver>
 					<url>jdbc:postgresql://ec2-54-172-219-6.compute-1.amazonaws.com:5432/dc4pakcbf4ucrd</url>
 					<user>faiqkdxyakowiw</user>
-					<password>faiqkdxyakowiw</password>
+					<password>987226ac4510038d185dba3818d43dc729df8c59afb43a7db179f120a253c020</password>
 					<baselineOnMigrate>true</baselineOnMigrate>
 					<schemas>public</schemas>
 				</configuration>
