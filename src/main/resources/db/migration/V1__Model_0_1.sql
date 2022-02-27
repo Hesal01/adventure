@@ -10,4 +10,4 @@ CREATE SEQUENCE adventure_id_seq;
 ALTER TABLE items
     ALTER COLUMN id SET DEFAULT nextval('adventure_id_seq');
 
-INSERT INTO items (id, title) values (1, 'Panier en osier');
+INSERT INTO items (id, title) values (10000000, 'Panier en osier');

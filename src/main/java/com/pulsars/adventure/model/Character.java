@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -31,4 +32,10 @@ public class Character {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="inventories",
+    joinColumns = {@JoinColumn(name = "character_id")},
+    inverseJoinColumns = {@JoinColumn(name = "item_id")})
+    private List<Item> items;
 }
