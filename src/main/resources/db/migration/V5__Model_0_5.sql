@@ -8,4 +8,4 @@ CREATE TABLE areas (
 ALTER TABLE areas
     ALTER COLUMN id SET DEFAULT nextval('adventure_id_seq');
 
-INSERT INTO areas (id, name) values (10000000, 'Le Faubourg');
+INSERT INTO areas (id, name) values (1, 'Le Faubourg');

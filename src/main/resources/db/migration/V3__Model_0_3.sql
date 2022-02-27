@@ -13,4 +13,4 @@ CREATE TABLE characters (
 ALTER TABLE characters
     ALTER COLUMN id SET DEFAULT nextval('adventure_id_seq');
 
-INSERT INTO characters (id, health, max_health, strength, defense, user_id) values (10000000, 10, 10, 0, 0, 10000000);
+INSERT INTO characters (id, health, max_health, strength, defense, user_id) values (1, 10, 10, 0, 0, 1);
