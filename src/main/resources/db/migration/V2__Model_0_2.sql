@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-                       id bigint PRIMARY KEY NOT NULL,
+                       id serial PRIMARY KEY NOT NULL,
                        username VARCHAR NOT NULL UNIQUE,
                        password VARCHAR NOT NULL,
                        role VARCHAR NOT NULL

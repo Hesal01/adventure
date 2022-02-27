@@ -1,10 +1,14 @@
 package com.pulsars.adventure.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Table(name = "users")
 @Entity
 public class User {
@@ -22,5 +26,8 @@ public class User {
 
     @Column(name = "role")
     private String role;
+
+    @OneToMany(mappedBy = "user")
+    private List<Character> characters;
 
 }

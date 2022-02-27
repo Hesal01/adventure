@@ -1,10 +1,13 @@
 package com.pulsars.adventure.model;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "items")
 public class Item {
