@@ -14,4 +14,9 @@ public class AuthenticationService {
         return securityContextUserName.equals(userName);
     }
 
+    public boolean isAdmin(String userName){
+        return SecurityContextHolder.getContext().getAuthentication().getAuthorities()
+                .stream().filter(a -> a.getAuthority().toString().equals("ADMIN")).count() == 1;
+    }
+
 }

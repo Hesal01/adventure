@@ -10,4 +10,4 @@ CREATE TABLE users (
 ALTER TABLE users
     ALTER COLUMN id SET DEFAULT nextval('adventure_id_seq');
 
-INSERT INTO users (id, username, password, role) values (1, 'test', 'passwordtest', 'ADMIN');
+INSERT INTO users (id, username, password, role) values (1, 'test', '$2a$10$NAfv0ziMtVLaMlofXIlxq.2VC76CZr4XNkBc5ao0m/fHpwWo6d1kC', 'ADMIN');
