@@ -22,7 +22,4 @@ public class Rarity {
     @Column(name = "color")
     private String color;
 
-    @OneToMany(mappedBy = "rarity", fetch = FetchType.LAZY)
-    private List<Item> items;
-
 }

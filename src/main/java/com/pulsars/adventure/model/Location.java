@@ -23,7 +23,4 @@ public class Location {
     @JoinColumn(name = "area_id", nullable = false)
     private Area area;
 
-    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
-    private List<Character> characters;
-
 }
