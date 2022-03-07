@@ -15,3 +15,6 @@ ALTER TABLE locations
 INSERT INTO locations (id, name, checkpoint, area_id) values (1, 'La lisière de la forêt', false, 1);
 INSERT INTO locations (id, name, checkpoint, area_id) values (2, 'Pont-Sur-Eaux', false, 1);
 INSERT INTO locations (id, name, checkpoint, area_id) values (3, 'La clairière', true, 1);
+
+ALTER TABLE characters
+    ADD CONSTRAINT fk_location FOREIGN KEY(current_location_id) references locations(id);

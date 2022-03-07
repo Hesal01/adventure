@@ -19,4 +19,8 @@ public class Item {
     @Column(name = "title")
     private String title;
 
+    @ManyToOne
+    @JoinColumn(name = "rarity_id", nullable = false)
+    private Rarity rarity;
+
 }

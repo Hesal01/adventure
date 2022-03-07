@@ -38,4 +38,9 @@ public class Character {
     joinColumns = {@JoinColumn(name = "character_id")},
     inverseJoinColumns = {@JoinColumn(name = "item_id")})
     private List<Item> items;
+
+    @ManyToOne
+    @JoinColumn(name = "current_location_id", nullable = false)
+    private Location location;
+
 }

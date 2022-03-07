@@ -9,21 +9,20 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
-@Table(name = "locations")
-public class Location {
+@Table(name = "rarities")
+public class Rarity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "area_id", nullable = false)
-    private Area area;
+    @Column(name = "color")
+    private String color;
 
-    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
-    private List<Character> characters;
+    @OneToMany(mappedBy = "rarity", fetch = FetchType.LAZY)
+    private List<Item> items;
 
 }

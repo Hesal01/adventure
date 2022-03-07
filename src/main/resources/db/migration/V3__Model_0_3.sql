@@ -7,6 +7,7 @@ CREATE TABLE characters (
                        strength bigint NOT NULL,
                        defense bigint NOT NULL,
                        user_id bigint NOT NULL,
+                       current_location_id bigint NOT NULL DEFAULT 1,
                        constraint fk_user FOREIGN KEY(user_id) references users(id)
 );
 

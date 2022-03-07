@@ -8,6 +8,7 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface CharacterMapper {
 
+    @Mapping(target = "currentLocation", source = "location")
     Character map(com.pulsars.adventure.model.Character character);
 
 }

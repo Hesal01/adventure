@@ -3,10 +3,10 @@ package com.pulsars.adventure.rest.dto;
 import lombok.Data;
 
 @Data
-public class Item {
+public class Rarity {
 
-    private String title;
+    private String name;
 
-    private Rarity rarity;
+    private String color;
 
 }

@@ -19,4 +19,6 @@ public class Character {
 
     private List<Item> items;
 
+    private Location currentLocation;
+
 }
