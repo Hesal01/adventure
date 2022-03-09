@@ -19,6 +19,9 @@ public class Item {
     @Column(name = "title")
     private String title;
 
+    @Column(name ="drop_per_ten_thousand")
+    private Long dropPerTenThousand;
+
     @ManyToOne
     @JoinColumn(name = "rarity_id", nullable = false)
     private Rarity rarity;

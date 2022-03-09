@@ -23,4 +23,10 @@ public class Location {
     @JoinColumn(name = "area_id", nullable = false)
     private Area area;
 
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="drops",
+            joinColumns = {@JoinColumn(name = "location_id")},
+            inverseJoinColumns = {@JoinColumn(name = "item_id")})
+    private List<Item> drops;
+
 }

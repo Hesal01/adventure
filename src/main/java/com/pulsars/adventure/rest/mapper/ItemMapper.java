@@ -12,6 +12,6 @@ public interface ItemMapper {
 
     Item map(com.pulsars.adventure.model.Item item);
 
-    List<Item> map(List<com.pulsars.adventure.model.Item> item);
+    Iterable<Item> map(Iterable<com.pulsars.adventure.model.Item> item);
 
 }
