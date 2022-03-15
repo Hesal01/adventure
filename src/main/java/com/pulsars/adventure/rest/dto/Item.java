@@ -9,4 +9,6 @@ public class Item {
 
     private Rarity rarity;
 
+    private Long amount;
+
 }

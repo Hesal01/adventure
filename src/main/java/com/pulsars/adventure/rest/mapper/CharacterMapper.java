@@ -5,10 +5,9 @@ import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = InventoryItemToItemMapper.class)
 public interface CharacterMapper {
 
-    @Mapping(target = "currentLocation", source = "location")
     Character map(com.pulsars.adventure.model.Character character);
 
 }

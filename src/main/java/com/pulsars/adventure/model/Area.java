@@ -19,6 +19,9 @@ public class Area {
     @Column(name="name")
     private String name;
 
+    @Column(name="start_location")
+    private Long startLocationId;
+
     @OneToMany(mappedBy = "area")
     private List<Location> locations;
 

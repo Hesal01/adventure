@@ -1,5 +1,6 @@
 package com.pulsars.adventure.service;
 
+import com.pulsars.adventure.model.Enemy;
 import com.pulsars.adventure.model.Item;
 import com.pulsars.adventure.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;

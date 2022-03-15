@@ -15,6 +15,7 @@ public class Character {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "character_id")
     private Long id;
 
     @Column(name = "health")
@@ -29,18 +30,26 @@ public class Character {
     @Column(name = "defense")
     private Long defense;
 
+    @Column(name = "agility")
+    private Long agility;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="inventories",
-    joinColumns = {@JoinColumn(name = "character_id")},
-    inverseJoinColumns = {@JoinColumn(name = "item_id")})
-    private List<Item> items;
+    @OneToMany(mappedBy = "character", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<InventoryItem> items;
 
     @ManyToOne
     @JoinColumn(name = "current_location_id", nullable = false)
-    private Location location;
+    private Location currentLocation;
+
+    public boolean isAlive() {
+        return health > 0;
+    }
+
+    public void setHealthMinZero(Long health) {
+        this.health = health;
+    }
 
 }

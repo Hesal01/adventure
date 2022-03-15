@@ -17,3 +17,9 @@ INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (2, 'Poir
 INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (3, 'Noix', 2000, 2);
 INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (4, 'Baies rouges', 1000, 2);
 INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (5, 'Menthe', 10, 3);
+INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (6, 'Griffes de chaton', 10000, 1);
+INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (7, 'Canines de chaton', 10000, 1);
+INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (8, 'Peau de serpent strié', 10000, 1);
+INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (9, 'Bois de cerf aux bois', 10000, 1);
+INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (10, 'Gland entamé', 10000, 1);
+INSERT INTO items (id, title, drop_per_ten_thousand, rarity_id) values (11, 'Plume de hibou', 10000, 2);

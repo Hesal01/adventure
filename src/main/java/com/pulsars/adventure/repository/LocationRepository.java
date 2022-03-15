@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LocationRepository extends CrudRepository<Location, Long> {
 
+    @Query("select l from Location l join fetch l.enemyPops where l.id =?1 ")
+    public Location getLocationByIdAndEnemyPops(Long locationId);
+
 }

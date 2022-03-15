@@ -2,7 +2,8 @@ DROP TABLE IF EXISTS areas;
 
 CREATE TABLE areas (
                 id serial PRIMARY KEY NOT NULL,
-                name varchar NOT NULL
+                name varchar NOT NULL,
+                start_location bigint DEFAULT 1
 );
 
 ALTER TABLE areas

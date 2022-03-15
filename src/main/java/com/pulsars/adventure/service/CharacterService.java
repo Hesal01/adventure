@@ -13,8 +13,19 @@ public class CharacterService {
     @Autowired
     private CharacterRepository characterRepository;
 
+    public Character getCharacter(Long id){
+        return characterRepository.findById(id).get();
+    }
+
     public Character getCharacterByUserId(Long userId){
         return characterRepository.getCharacterByUserId(userId);
     }
 
+    public Character getCharacterWithItems(Long characterId){
+        return characterRepository.getCharacterWithItems(characterId);
+    }
+
+    public Character save(Character character) {
+        return this.characterRepository.save(character);
+    }
 }

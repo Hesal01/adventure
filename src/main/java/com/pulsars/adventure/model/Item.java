@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,5 +26,8 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "rarity_id", nullable = false)
     private Rarity rarity;
+
+    @OneToMany(mappedBy = "item", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<InventoryItem> characters;
 
 }
