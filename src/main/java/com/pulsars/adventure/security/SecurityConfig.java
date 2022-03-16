@@ -1,6 +1,5 @@
 package com.pulsars.adventure.security;
 
-import com.pulsars.adventure.security.filter.CorsFilter;
 import com.pulsars.adventure.security.filter.CustomAuthenticationFilter;
 import com.pulsars.adventure.security.filter.CustomAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +15,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.session.SessionManagementFilter;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.List;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
@@ -31,17 +33,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
     }
 
-    @Bean
-    CorsFilter corsFilter() {
-        CorsFilter filter = new CorsFilter();
-        return filter;
-    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         CustomAuthenticationFilter customAuthenticationFilter = new CustomAuthenticationFilter(authenticationManagerBean());
-        http.addFilterBefore(corsFilter(), SessionManagementFilter.class);
-        http.cors().and().csrf().disable();
+
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
+        corsConfiguration.setAllowedOrigins(List.of("http://localhost:4200"));
+        corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PUT","OPTIONS","PATCH", "DELETE"));
+        corsConfiguration.setAllowCredentials(true);
+        corsConfiguration.setExposedHeaders(List.of("Authorization"));
+
+        // You can customize the following part based on your project, it's only a sample
+        http.authorizeRequests().and().csrf().disable().cors().configurationSource(request -> corsConfiguration);
+
         http.authorizeRequests().antMatchers("/login/**").permitAll();
         http.authorizeRequests().antMatchers("/user/**").permitAll();
         http.authorizeRequests().antMatchers("/token/refresh/**").permitAll();
