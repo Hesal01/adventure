@@ -17,8 +17,16 @@ public class CharacterService {
         return characterRepository.findById(id).get();
     }
 
+    public Character getCharacterByUserIdAndName(Long userId, String characterName){
+        return characterRepository.getCharacterByUserIdAndCharacterName(userId, characterName);
+    }
+
     public Character getCharacterByUserId(Long userId){
         return characterRepository.getCharacterByUserId(userId);
+    }
+
+    public Character getCharacterByName(String characterName){
+        return characterRepository.getCharacterByName(characterName);
     }
 
     public Character getCharacterWithItems(Long characterId){

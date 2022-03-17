@@ -20,15 +20,15 @@ public class ProgressionController {
     private CharacterMapper characterMapper;
 
     @PreAuthorize("@authenticationService.hasAccess(#userName)")
-    @GetMapping("startprogression/{userName}/{characterId}")
-    public ResponseEntity<Character> startProgression(@PathVariable String userName, @PathVariable Long characterId){
-        return ResponseEntity.ok().body(characterMapper.map(progressionService.startProgression(characterId)));
+    @GetMapping("startprogression/{userName}/{characterName}")
+    public ResponseEntity<Character> startProgression(@PathVariable String userName, @PathVariable String characterName){
+        return ResponseEntity.ok().body(characterMapper.map(progressionService.startProgression(characterName)));
     }
 
     @PreAuthorize("@authenticationService.hasAccess(#userName)")
-    @GetMapping("returnhome/{userName}/{characterId}")
-    public ResponseEntity<Character> returnHome(@PathVariable String userName, @PathVariable Long characterId){
-        return ResponseEntity.ok().body(characterMapper.map(progressionService.returnHome(characterId)));
+    @GetMapping("returnhome/{userName}/{characterName}")
+    public ResponseEntity<Character> returnHome(@PathVariable String userName, @PathVariable String characterName){
+        return ResponseEntity.ok().body(characterMapper.map(progressionService.returnHome(characterName)));
     }
 
 }

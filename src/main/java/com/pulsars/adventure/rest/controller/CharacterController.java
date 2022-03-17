@@ -16,9 +16,9 @@ public class CharacterController {
     @Autowired
     private CharacterMapper characterMapper;
 
-    @GetMapping("/character/{userId}")
-    public ResponseEntity<Character> getCharacter(@PathVariable Long userId){
-        return ResponseEntity.ok().body(characterMapper.map(characterService.getCharacterByUserId(userId)));
+    @GetMapping("/character/{userId}/{characterName}")
+    public ResponseEntity<Character> getCharacter(@PathVariable Long userId, @PathVariable String characterName){
+        return ResponseEntity.ok().body(characterMapper.map(characterService.getCharacterByUserIdAndName(userId, characterName)));
     }
 
 }

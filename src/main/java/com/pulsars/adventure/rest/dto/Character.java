@@ -9,6 +9,8 @@ import java.util.List;
 @Data
 public class Character {
 
+    private String name;
+
     private Long health;
 
     private Long maxHealth;

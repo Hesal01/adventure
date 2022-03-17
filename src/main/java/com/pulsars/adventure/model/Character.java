@@ -18,6 +18,9 @@ public class Character {
     @Column(name = "character_id")
     private Long id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "health")
     private Long health;
 

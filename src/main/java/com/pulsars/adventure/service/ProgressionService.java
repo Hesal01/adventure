@@ -24,19 +24,15 @@ public class ProgressionService {
     @Autowired
     private BattleUtil battleUtil;
 
-    public Character startProgression(Long characterId) {
-        Character character = characterService.getCharacterByUserId(characterId);
+    public Character startProgression(String characterName) {
+        Character character = characterService.getCharacterByName(characterName);
         goToNextCheckPoint(character.getCurrentLocation(), character);
         if(!character.isAlive()){
             character.setHealthMinZero(character.getMaxHealth());
             Long startLocationId = character.getCurrentLocation().getArea().getStartLocationId();
             character.setCurrentLocation(locationService.getLocation(startLocationId).get());
         }
-        Character save = characterService.save(character);
-        character.getItems().forEach(
-                i -> System.out.println(i.getItem().getId())
-        );
-        return character;
+        return characterService.save(character);
     }
 
     public void goToNextCheckPoint(Location currentLocation, Character character) {
@@ -59,11 +55,8 @@ public class ProgressionService {
         }
     }
 
-    public Character returnHome(Long characterId) {
-        Character character = characterService.getCharacter(characterId);
-        character.getItems().forEach(
-                i -> System.out.println(i.getItem().getId())
-        );
+    public Character returnHome(String characterName) {
+        Character character = characterService.getCharacterByName(characterName);
         Long startLocationId = character.getCurrentLocation().getArea().getStartLocationId();
         Location location = locationService.getLocation(startLocationId).get();
         character.setCurrentLocation(location);
